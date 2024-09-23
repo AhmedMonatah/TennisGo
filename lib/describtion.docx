@@ -1,0 +1,36 @@
+1- lib/core/auth/
+Purpose: Contains files related to authentication logic.
+Typical Files: May include user management, authentication services, or any third-party library integration (e.g., Firebase Auth).
+2- lib/core/errors/
+Purpose: Manages error handling throughout the app.
+Typical Files: Defines custom error classes, exceptions, or utilities for handling specific types of errors, making debugging easier.
+3- lib/core/helper_function/
+Purpose: Holds helper functions that can be used across different parts of the app.
+Typical Files: Utility functions for data formatting, input validation, or any reusable logic.
+4- lib/core/services/
+Purpose: Contains service classes that interact with external resources such as APIs or local storage.
+Typical Files: Services to interact with Firebase, HTTP requests, or device-related operations like local notifications.
+5- lib/core/utiles/
+Purpose: Stores utility classes for common functionalities.
+Typical Files: Might include constants, enums, or any reusable configuration settings used throughout the app.
+6- lib/core/widgets/
+Purpose: Contains reusable widgets that can be used across different pages.
+Typical Files: Common UI components like buttons, text fields, or loading indicators.
+7- lib/features/home/auth/
+Purpose: Handles authentication logic specifically for the "Home" feature.
+Typical Files: Auth flows (login, registration) specific to the "home" section.
+8- lib/features/home/presentation/
+Purpose: Stores UI components related to the "Home" feature.
+Typical Files: Pages, screens, and widgets specifically for presenting the "home" feature.
+9- lib/features/login/auth/
+Purpose: Handles login-specific authentication logic.
+Typical Files: Login validation, login service interactions (e.g., Firebase, API).
+10- lib/features/login/presentation/
+Purpose: Manages UI for the login feature.
+Typical Files: Login screen, form validation, and other widgets related to the login flow.
+11- firebase_options.dart
+Purpose: Contains Firebase configurations for initializing Firebase services in the app.
+Typical Files: Auto-generated Firebase configuration details, including API keys and project IDs.
+main.dart
+Purpose: The entry point of the app, where the main app widget is created and run.
+Typical Files: App initialization, theme settings, and routing setup.
