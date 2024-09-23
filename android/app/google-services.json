@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "1018536310633",
+    "project_id": "weathertennis-87368",
+    "storage_bucket": "weathertennis-87368.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1018536310633:android:ad3ff65a6454821e622ff8",
+        "android_client_info": {
+          "package_name": "com.example.cellula_tenn"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNActXVzSS_GsS-ZwlOwn600mLgXDVlQ0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1018536310633:android:280b66fd37578357622ff8",
+        "android_client_info": {
+          "package_name": "com.example.cellula_tennis_weather_"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNActXVzSS_GsS-ZwlOwn600mLgXDVlQ0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1018536310633:android:3d45db86c1c09abc622ff8",
+        "android_client_info": {
+          "package_name": "com.example.weather_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNActXVzSS_GsS-ZwlOwn600mLgXDVlQ0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
