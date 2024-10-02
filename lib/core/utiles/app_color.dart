@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 abstract class AppColor{
-  static const Color primaryColor=Color.fromARGB(255, 27, 89, 30);
+  static const Color PrimaryHomeColor=Color(0xFF0A1F44);
   static const Color LightPrimaryColor=Color(0xFF2D9F5D);
   static const Color SecondPrimaryColor=Color(0xFFF4A91F);
   static const Color CondtionInSign=Color(0xFF949D9E);
