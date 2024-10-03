@@ -68,6 +68,6 @@ List<Widget> buildPages(BuildContext context) {
       },
     ),
     FavoriteViewBody(),
-    const Center(child: Text('Check View')), // Placeholder for the third tab
+    const Center(child: Text('Check View ')), // Placeholder for the third tab
   ];
 }
