@@ -22,7 +22,7 @@ class _SigninViewBodyState extends State<SigninViewBody> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: 30.0),
+      padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 70.0),
       child: SingleChildScrollView(
         child: Form(
           key: formKey,
@@ -37,7 +37,7 @@ class _SigninViewBodyState extends State<SigninViewBody> {
                   onSaved: (value) {
                     email = value!;
                   }),
-              SizedBox(
+              const SizedBox(
                 height: 16,
               ),
               PasswordField(
@@ -45,14 +45,14 @@ class _SigninViewBodyState extends State<SigninViewBody> {
                   password = value!;
                 },
               ),
-              SizedBox(
+              const SizedBox(
                 height: 16,
               ),
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 32,
               ),
               CustomButton(

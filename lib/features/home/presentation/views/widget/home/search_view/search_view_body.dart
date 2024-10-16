@@ -5,6 +5,8 @@ import 'package:weather_app/features/home/presentation/views/widget/extract_widg
 import 'package:weather_app/features/home/presentation/views/widget/extract_widget/search_button.dart';
 
 class SearchViewBody extends StatefulWidget {
+  const SearchViewBody({super.key});
+
   @override
   State<SearchViewBody> createState() => _SearchViewBodyState();
 }
@@ -21,10 +23,13 @@ class _SearchViewBodyState extends State<SearchViewBody> {
 
   @override
   Widget build(BuildContext context) {
+    // Use MediaQuery to get screen height
+    final size = MediaQuery.of(context).size;
+    final screenHeight = size.height;
+
     return Padding(
       padding: const EdgeInsets.all(16.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: ListView(
         children: [
           const Text(
             'Hello',
@@ -34,7 +39,7 @@ class _SearchViewBodyState extends State<SearchViewBody> {
               color: Colors.blueAccent,
             ),
           ),
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           Text(
             getUser().name,
             style: const TextStyle(
@@ -45,12 +50,21 @@ class _SearchViewBodyState extends State<SearchViewBody> {
             ),
           ),
           const SizedBox(height: 40),
-          Center(
-            heightFactor: 4,
-            child: CustomeHomeTextField(cityController: cityController),
+
+          // Use SizedBox to control the vertical spacing and center content
+          SizedBox(
+            height: screenHeight * 0.4,  // Adjust height based on screen size
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  CustomeHomeTextField(cityController: cityController),
+                  const SizedBox(height: 35),
+                  SearchButton(cityController: cityController, title: 'Search'),
+                ],
+              ),
+            ),
           ),
-          const SizedBox(height: 16),
-          SearchButton(cityController: cityController, title: 'Search'),
         ],
       ),
     );

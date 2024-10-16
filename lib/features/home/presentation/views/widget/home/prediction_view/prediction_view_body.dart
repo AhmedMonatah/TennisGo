@@ -6,7 +6,7 @@ import 'package:weather_app/features/home/presentation/views/widget/extract_widg
 class PredictionViewBody extends StatefulWidget {
   final Weather weather;
 
-  const PredictionViewBody({Key? key, required this.weather}) : super(key: key);
+  const PredictionViewBody({super.key, required this.weather});
 
   @override
   _PredictionViewBodyState createState() => _PredictionViewBodyState();
@@ -36,13 +36,13 @@ class _PredictionViewBodyState extends State<PredictionViewBody> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(
+          const Text(
             '🔍 Click the check icon to see your prediction!',
             style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
             textAlign: TextAlign.center,
           ),
           IconButton(
-            icon: Icon(
+            icon: const Icon(
               Icons.check,
               size: 50,
               color: Colors.blueAccent,

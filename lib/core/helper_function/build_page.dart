@@ -68,7 +68,7 @@ List<Widget> buildPages(BuildContext context) {
         }
       },
     ),
-    FavoriteViewBody(),
+    const FavoriteViewBody(),
     // Adding Prediction Page with weather data
     BlocBuilder<WeatherCubit, WeatherState>(
       builder: (context, state) {

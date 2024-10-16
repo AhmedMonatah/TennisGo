@@ -29,7 +29,7 @@ class SigninViewBodyBlocConsumer extends StatelessWidget {
         // Provide a simple default WeatherModel instance
         return CustomProgressHud(
           isLoading: state is SigninLoading ? true : false,
-          child: SigninViewBody()
+          child: const SigninViewBody()
         );
       },
     );

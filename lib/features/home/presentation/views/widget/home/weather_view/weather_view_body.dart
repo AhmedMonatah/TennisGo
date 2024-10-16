@@ -10,7 +10,7 @@ import 'package:weather_app/features/home/presentation/views/widget/extract_widg
 class WeatherViewBody extends StatefulWidget {
   final Weather weather;
 
-  const WeatherViewBody({required this.weather});
+  const WeatherViewBody({super.key, required this.weather});
 
   @override
   _WeatherPageState createState() => _WeatherPageState();

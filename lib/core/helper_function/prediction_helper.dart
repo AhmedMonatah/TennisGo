@@ -17,7 +17,7 @@ class PredictionHelper {
 
   // Method to call the prediction API and return the result
   static Future<String> getPrediction(List<int> features) async {
-    final url = Uri.parse('/predict');
+    final url = Uri.parse('');
     Map<String, dynamic> body = {'features': features};
 
     try {

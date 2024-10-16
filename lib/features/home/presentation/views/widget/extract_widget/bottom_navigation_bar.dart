@@ -3,7 +3,7 @@ import 'package:weather_app/core/helper_function/build_page.dart'; // Importing 
 import 'package:weather_app/core/utiles/app_color.dart'; // Importing your color utility
 
 class CustomBottomNavigationBar extends StatefulWidget {
-  const CustomBottomNavigationBar({Key? key}) : super(key: key);
+  const CustomBottomNavigationBar({super.key});
 
   @override
   State<CustomBottomNavigationBar> createState() => _CustomBottomNavigationBarState();

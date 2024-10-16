@@ -3,6 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weather_app/features/home/presentation/manger/cubits/fav_cubit/fav_cubit.dart';
 
 class FavoriteViewBody extends StatelessWidget {
+  const FavoriteViewBody({super.key});
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<FavoritesCubit, List<String>>(

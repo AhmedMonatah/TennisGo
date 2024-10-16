@@ -20,7 +20,7 @@ class WeatherChart extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.blueGrey[900],
         borderRadius: BorderRadius.circular(12),
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             color: Colors.black26,
             blurRadius: 8,
@@ -110,7 +110,7 @@ class WeatherChart extends StatelessWidget {
               isStrokeCapRound: true,
             ),
           ],
-          lineTouchData: LineTouchData(enabled: true),
+          lineTouchData: const LineTouchData(enabled: true),
           maxX: 2,
           minX: 0,
           minY: weather.forecast.map((e) => e.temperature).reduce((a, b) => a < b ? a : b).toDouble() - 5,
