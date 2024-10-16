@@ -45,7 +45,10 @@ python app.py // to host the AI model and access it through your local host on p
 ## 🎥 Video Tutorial
 
 
-https://github.com/user-attachments/assets/9770dc9b-84e3-4038-a8d4-24a3df88ed60
+
+https://github.com/user-attachments/assets/6f884e55-2234-4ed0-9155-27ed23069840
+
+
 
 
 
