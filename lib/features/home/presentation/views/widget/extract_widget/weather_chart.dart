@@ -15,7 +15,7 @@ class WeatherChart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height * 0.27,
+      height: MediaQuery.of(context).size.height * 0.24,
       padding: const EdgeInsets.all(8),
       decoration: BoxDecoration(
         color: Colors.blueGrey[900],

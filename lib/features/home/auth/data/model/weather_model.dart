@@ -39,4 +39,14 @@ class WeatherModel extends Weather {
       forecast: forecast,
     );
   }
+    // Method to generate the condition list
+  List<int> getConditionList() {
+    return [
+      cloudCover > 7 ? 1 : 0,    
+      (condition == 'Sunny' || condition == 'Clear') ? 0 : 1,  
+      windSpeed > 35 ? 1 : 0,
+      temperature > 35 ? 1 : 0,    
+      humidity > 4 ? 1 : 0,      
+    ];
+  }
 }

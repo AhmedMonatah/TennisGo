@@ -7,7 +7,8 @@ import 'package:weather_app/features/login/presentation/cubits/signin_cubit/sign
 import 'package:weather_app/features/login/presentation/views/widget/extract_widget/dont_have_account_widget.dart';
 
 class SigninViewBody extends StatefulWidget {
-  const SigninViewBody({super.key});
+
+  const SigninViewBody({super.key}); // Constructor
 
   @override
   State<SigninViewBody> createState() => _SigninViewBodyState();
@@ -15,18 +16,19 @@ class SigninViewBody extends StatefulWidget {
 
 class _SigninViewBodyState extends State<SigninViewBody> {
   late String email, password;
-   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
+  AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 8.0),
+      padding: EdgeInsets.only(top: 30.0),
       child: SingleChildScrollView(
         child: Form(
           key: formKey,
           autovalidateMode: autovalidateMode,
           child: Column(
-            children: [  
+            children: [
               const SizedBox(height: 75),
               CustomTextFormField(
                   hintText: 'Email',
@@ -48,23 +50,20 @@ class _SigninViewBodyState extends State<SigninViewBody> {
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                ],
+                children: [],
               ),
               SizedBox(
                 height: 32,
               ),
               CustomButton(
                 onPressed: () {
-               if(formKey.currentState!.validate()){
-               
-              formKey.currentState!.save();
-              context.read<SigninCubit>().signin(email, password);
-               }else{
-              autovalidateMode=AutovalidateMode.always;
-              setState(() {});
-               }
-              
+                  if (formKey.currentState!.validate()) {
+                    formKey.currentState!.save();
+                    context.read<SigninCubit>().signin(email, password);
+                  } else {
+                    autovalidateMode = AutovalidateMode.always;
+                    setState(() {});
+                  }
                 },
                 text: 'Sign In',
               ),

@@ -10,8 +10,13 @@ class FavoriteViewBody extends StatelessWidget {
         if (favCities.isEmpty) {
           return const Center(
             child: Text(
-              'No cities favorited yet.',
-              style: TextStyle(color: Colors.white, fontSize: 18),
+              '🌟 No cities favorited yet. 🌟',
+              style: TextStyle(
+                color: Colors.white, 
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+              textAlign: TextAlign.center,
             ),
           );
         }
@@ -19,12 +24,18 @@ class FavoriteViewBody extends StatelessWidget {
         return ListView.builder(
           itemCount: favCities.length,
           itemBuilder: (context, index) {
-            return Padding(
-              padding: const EdgeInsets.only(top:100),
+            return Card(
+              margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+              elevation: 5,
+              color: Colors.blueGrey[800],
               child: ListTile(
                 title: Text(
                   favCities[index],
-                  style: const TextStyle(color: Colors.white),
+                  style: const TextStyle(
+                    color: Colors.white, 
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
                 trailing: IconButton(
                   icon: const Icon(Icons.delete, color: Colors.red),
