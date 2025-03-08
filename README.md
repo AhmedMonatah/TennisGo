@@ -51,39 +51,48 @@ http://10.0.2.2:5001/predict
 
 ## 📸 Screenshots
 
-### **Splash Screen**
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/15f77474-d9f2-4f70-934a-7a7d9b18376f" width="300">
-</p>
-
-### **Onboarding Screens**
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/49e1cb8f-501a-48e7-a2a1-9ec92afc1e59" width="200"> 
-  <img src="https://github.com/user-attachments/assets/daeadbc2-3532-4d5c-b934-c4a070156643" width="200"> 
-  <img src="https://github.com/user-attachments/assets/5f30fc1b-dc25-4afd-ade0-f357f812826b" width="200"> 
-</p>
-
-### **Sign-In Screens**
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/5cfa36c6-f0e4-4675-951c-993c5a1b26e6" width="200"> 
-  <img src="https://github.com/user-attachments/assets/0849916f-f1e0-4ffe-81a8-9f809e0ac99b" width="200">
-</p>
-
-### **Search & Weather Screens**
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/21b40f41-da80-4e01-b7b3-ad77c6cb968a" width="200"> 
-  <img src="https://github.com/user-attachments/assets/7ae648f5-0e37-4ca7-ab53-cde138891525" width="200">
-</p>
-
-### **Additional Features**
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/00e614de-8726-4690-9212-8dbf9a74663d" width="200"> 
-  <img src="https://github.com/user-attachments/assets/6d1887c0-1d89-4e62-9e0c-ac3988cd87c3" width="200"> 
-  <img src="https://github.com/user-attachments/assets/6ca3cd50-26d0-4862-b235-3a00ffdfea2a" width="200"> 
-</p>
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/ddf7b87a-969a-434c-8554-f16ced1253be" width="200">
-</p>
+<table align="center">
+  <tr>
+    <th>Splash Screen</th>
+    <th>Onboarding 1</th>
+    <th>Onboarding 2</th>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/15f77474-d9f2-4f70-934a-7a7d9b18376f" width="200"></td>
+    <td><img src="https://github.com/user-attachments/assets/49e1cb8f-501a-48e7-a2a1-9ec92afc1e59" width="200"></td>
+    <td><img src="https://github.com/user-attachments/assets/daeadbc2-3532-4d5c-b934-c4a070156643" width="200"></td>
+  </tr>
+  <tr>
+    <th>Onboarding 3</th>
+    <th>Sign-In</th>
+    <th>Sign-Up</th>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/5f30fc1b-dc25-4afd-ade0-f357f812826b" width="200"></td>
+    <td><img src="https://github.com/user-attachments/assets/5cfa36c6-f0e4-4675-951c-993c5a1b26e6" width="200"></td>
+    <td><img src="https://github.com/user-attachments/assets/0849916f-f1e0-4ffe-81a8-9f809e0ac99b" width="200"></td>
+  </tr>
+  <tr>
+    <th>Search</th>
+    <th>Weather</th>
+    <th>Favorite City</th>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/21b40f41-da80-4e01-b7b3-ad77c6cb968a" width="200"></td>
+    <td><img src="https://github.com/user-attachments/assets/7ae648f5-0e37-4ca7-ab53-cde138891525" width="200"></td>
+    <td><img src="https://github.com/user-attachments/assets/00e614de-8726-4690-9212-8dbf9a74663d" width="200"></td>
+  </tr>
+  <tr>
+    <th>Graph</th>
+    <th>AI Model Check</th>
+    <th>AI Model Check 2</th>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/6d1887c0-1d89-4e62-9e0c-ac3988cd87c3" width="200"></td>
+    <td><img src="https://github.com/user-attachments/assets/6ca3cd50-26d0-4862-b235-3a00ffdfea2a" width="200"></td>
+    <td><img src="https://github.com/user-attachments/assets/ddf7b87a-969a-434c-8554-f16ced1253be" width="200"></td>
+  </tr>
+</table>
 
 ## 🎾 Get Started with Flutter
 
@@ -102,3 +111,4 @@ flutter run
 ```
 
 Enjoy using **TennisGo** and take your tennis training to the next level! 🚀
+
