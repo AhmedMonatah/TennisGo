@@ -1,7 +1,6 @@
 <p align="center">
-  <img src="your_image_url" width="150" style="border-radius: 50%; border: 4px solid;" alt="https://github.com/user-attachments/assets/182450ef-9a43-416b-8362-d822efa1d07d">
+  <img src="https://github.com/user-attachments/assets/182450ef-9a43-416b-8362-d822efa1d07d" width="150" style="border-radius: 50%; border: 4px solid;" alt="TennisGo App 🎾">
 </p>
-# 🎾 TennisGo App
 
 Welcome to **TennisGo**! This Flutter application helps tennis players check real-time weather conditions and determine whether they can train. The app also includes AI-powered features for weather analysis and predictions.
 
