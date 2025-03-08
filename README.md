@@ -1,68 +1,93 @@
-# 🌤️ Weather_Tennis App
+# 🎾 TennisGo App
 
-Welcome to the **Weather App**! This Flutter project is designed to provide real-time weather information for users around the world. This application showcases various Flutter features and best practices for app development.
+Welcome to **TennisGo**! This Flutter application helps tennis players check real-time weather conditions and determine whether they can train. The app also includes AI-powered features for weather analysis and predictions.
 
 ## 🌟 Features
 
-- **Real-time Weather Data**: Fetches current weather information based on user location or selected cities. 🌍
-- **User-Friendly Interface**: A clean and intuitive UI for easy navigation and accessibility. 🖥️
-- **Offline Storage**: Stores user preferences and favorite locations using **SharedPreferences**. 💾
+- **Real-time Weather Data**: Get accurate weather updates based on your location or selected cities. 🌍
+- **AI-Powered Predictions**: Uses a trained model to suggest whether conditions are suitable for tennis training. 🎾
+- **User-Friendly Interface**: A clean and intuitive UI for seamless navigation. 🖥️
+- **Offline Storage**: Saves user preferences and favorite locations using **SharedPreferences**. 💾
 
 ## 🛠️ Technologies Used
 
 - **Flutter**: A powerful UI toolkit for building natively compiled applications for mobile, web, and desktop from a single codebase. 📱
-- **BLoC (Business Logic Component)**: Implements the BLoC pattern for effective state management, making the app scalable and maintainable. ⚙️
-- **SharedPreferences**: Provides persistent storage for user settings and preferences. 📦
-- **Git It**: A package to manage dependencies and configurations in the app, enhancing the development workflow. 🚀
+- **BLoC (Business Logic Component)**: Implements the BLoC pattern for state management. ⚙️
+- **SharedPreferences**: Provides persistent storage for user settings. 📦
+- **Flask API**: Hosts an AI model for weather-based training recommendations. 🚀
 
 ## 🚀 Getting Started
-CLone the repo and Local host the Ai Model by following these Instrcutions:
 
-1-Run these commands in the terminal
+Follow these steps to set up the project and host the AI model locally:
 
+### 1. Set Up and Run the AI Model
+
+```bash
+# Create a virtual environment
 python3 -m venv venv
 
-source venv/bin/activate //MAC
+# Activate the virtual environment
+source venv/bin/activate  # macOS/Linux
+source venv/Scripts/activate  # Windows
 
-source venv/Scripts/activate. // Windows
+# Install dependencies
+pip install Flask numpy scikit-learn==1.3.2
 
-pip install Flask
-
-pip show Flask
-
-pip install numpy
-
-pip install scikit-learn==1.3.2
-
+# Run the AI model
 python app.py
+```
 
-python app.py // to host the AI model and access it through your local host on port 5001.
+### 2. Verify the AI Model Hosting
+Check if the model is hosted successfully by visiting:
+```
+http://127.0.0.1:5001
+```
 
-2- check if your file sucess host success or not by try this IP ('http://127.0.0.1:5001') in your browser.
+### 3. Connect Your Flutter App to the AI Model
+Use the following endpoint in your Flutter app to send data to the AI model:
+```
+http://10.0.2.2:5001/predict
+```
 
-3- Send your list to the model using POST method use this IP : ('http://10.0.2.2:5001/predict') in your flutter app.
+## 📸 Screenshots
 
-## 🎥 Video Tutorial
+### **Splash Screen**
+![Splash](https://github.com/user-attachments/assets/15f77474-d9f2-4f70-934a-7a7d9b18376f)
 
+### **Onboarding Screens**
+![Onboarding 1](https://github.com/user-attachments/assets/49e1cb8f-501a-48e7-a2a1-9ec92afc1e59)
+![Onboarding 2](https://github.com/user-attachments/assets/daeadbc2-3532-4d5c-b934-c4a070156643)
+![Onboarding 3](https://github.com/user-attachments/assets/5f30fc1b-dc25-4afd-ade0-f357f812826b)
 
+### **Sign-In Screens**
+![Sign-In](https://github.com/user-attachments/assets/5cfa36c6-f0e4-4675-951c-993c5a1b26e6)
+![Sign-Up 2](https://github.com/user-attachments/assets/0849916f-f1e0-4ffe-81a8-9f809e0ac99b)
 
-https://github.com/user-attachments/assets/6f884e55-2234-4ed0-9155-27ed23069840
+### **Search & Weather Screens**
+![Search](https://github.com/user-attachments/assets/21b40f41-da80-4e01-b7b3-ad77c6cb968a)
+![Weather](https://github.com/user-attachments/assets/7ae648f5-0e37-4ca7-ab53-cde138891525)
 
+### **Additional Features**
+![Favorite City](https://github.com/user-attachments/assets/00e614de-8726-4690-9212-8dbf9a74663d)
+![Graph](https://github.com/user-attachments/assets/6d1887c0-1d89-4e62-9e0c-ac3988cd87c3)
+![AI Model Check](https://github.com/user-attachments/assets/6ca3cd50-26d0-4862-b235-3a00ffdfea2a)
+![AI Model Check2](https://github.com/user-attachments/assets/ddf7b87a-969a-434c-8554-f16ced1253be)
 
-
-
-
-To get started with this project, clone the repository and run the following commands:
+## 🎾 Get Started with Flutter
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/weather_app.git
+git clone https://github.com/yourusername/TennisGo.git
 
 # Navigate to the project directory
-cd weather_app
+cd TennisGo
 
-# Install the dependencies
+# Install dependencies
 flutter pub get
 
 # Run the application
 flutter run
+```
+
+Enjoy using **TennisGo** and take your tennis training to the next level! 🚀
+
