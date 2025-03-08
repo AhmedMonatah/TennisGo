@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:weather_app/features/home/auth/data/domin/entites/weather_entity.dart';
+import 'package:weather_app/features/home/presentation/views/widget/extract_widget/weather_icon.dart';
 
 class CondationWeather extends StatelessWidget {
   final WeatherDay selectedWeather;
@@ -15,34 +16,40 @@ class CondationWeather extends StatelessWidget {
     return Center(
       child: Column(
         children: [
-          Text(
-            selectedWeather.condition,
-            style: GoogleFonts.ubuntu(
-              textStyle: TextStyle(
-                fontSize: screenWidth * 0.08, // Dynamic font size
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
-            ),
-          ),
-          SizedBox(height: screenHeight * 0.015), // Dynamic spacing
-          Icon(
-            Icons.wb_sunny,
-            size: screenWidth * 0.2, // Adjust icon size
-            color: Colors.yellowAccent,
-          ),
-          SizedBox(height: screenHeight * 0.015), // Dynamic spacing
-          Text(
-            '${selectedWeather.temperature}°C',
-            style: GoogleFonts.ubuntu(
-              textStyle: TextStyle(
-                fontSize: screenWidth * 0.07, // Dynamic font size
-                fontWeight: FontWeight.w500,
-                color: Colors.white70,
-              ),
-            ),
-          ),
+          _buildWeatherConditionText(screenWidth),
+          SizedBox(height: screenHeight * 0.015),
+          WeatherIcon(condition: selectedWeather.condition, size: screenWidth * 0.2),
+          SizedBox(height: screenHeight * 0.015),
+          _buildTemperatureText(screenWidth),
         ],
+      ),
+    );
+  }
+
+  /// Widget for displaying the weather condition text
+  Widget _buildWeatherConditionText(double screenWidth) {
+    return Text(
+      selectedWeather.condition,
+      style: GoogleFonts.ubuntu(
+        textStyle: TextStyle(
+          fontSize: screenWidth * 0.08,
+          fontWeight: FontWeight.bold,
+          color: Colors.white,
+        ),
+      ),
+    );
+  }
+
+  /// Widget for displaying the temperature text
+  Widget _buildTemperatureText(double screenWidth) {
+    return Text(
+      '${selectedWeather.temperature}°C',
+      style: GoogleFonts.ubuntu(
+        textStyle: TextStyle(
+          fontSize: screenWidth * 0.07,
+          fontWeight: FontWeight.w500,
+          color: Colors.white70,
+        ),
       ),
     );
   }

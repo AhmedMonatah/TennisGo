@@ -59,6 +59,11 @@ class AppStrings {
   static const String TemperatureTitle ='Temperature Over Last 7 Days';
   static const String HumidityTitle ='Humidity Levels';
   static const String WindSpeedTitle ='Wind Speed Over Last 7 Days';
+  static const String TitleProblemWeather ='Oops! Something went wrong';
+  static const String TextProblemWeather ='We couldn\'t fetch the weather data. Please try again later.';
+  static const String NoWeatherAvailable ='No weather data available';
+  static const String NoPredictionAvailable ='No prediction data available';
+  static const String NoPredictionStatisticsAvailable ='No statistics data available';
 
   // Profile screen
   static const String saveButton = 'Save';
