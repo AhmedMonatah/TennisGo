@@ -18,7 +18,7 @@ class TemperatureChart extends StatelessWidget {
           bottomTitles: AxisTitles(
             sideTitles: SideTitles(
               showTitles: true,
-              interval: 1,
+              interval: 2,
               getTitlesWidget: (value, meta) {
                 return Padding(
                   padding: const EdgeInsets.only(top: 8.0, right: 4),
@@ -32,7 +32,7 @@ class TemperatureChart extends StatelessWidget {
           leftTitles: AxisTitles(
             sideTitles: SideTitles(
               showTitles: true,
-              interval: 5,
+              interval: 8,
               reservedSize: 40,
               getTitlesWidget: (value, meta) {
                 return Padding(

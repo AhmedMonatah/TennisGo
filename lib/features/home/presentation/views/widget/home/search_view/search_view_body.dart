@@ -27,41 +27,43 @@ class _SearchViewBodyState extends State<SearchViewBody> {
     final screenHeight = size.height;
 
     return SafeArea(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 29),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            // Training Image
-            Image.asset(
-              AppStrings.SearchViewImage,
-              height: screenHeight * 0.35, // Responsive height
-            ),
-            const SizedBox(height: 20),
+      child: SingleChildScrollView( // Wrap the body with SingleChildScrollView
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 29),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              // Training Image
+              Image.asset(
+                AppStrings.SearchViewImage,
+                height: screenHeight * 0.35, // Responsive height
+              ),
+              const SizedBox(height: 20),
 
-            // Centered "Training Day" Text
-            Center(
-              child: Text(
-                AppStrings.SearchViewSubtitle,
-                textAlign: TextAlign.center, // Ensures text is centered
-                style: GoogleFonts.ubuntu(
-                  textStyle: const TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                    color: Color.fromARGB(255, 79, 78, 78),
+              // Centered "Training Day" Text
+              Center(
+                child: Text(
+                  AppStrings.SearchViewSubtitle,
+                  textAlign: TextAlign.center, // Ensures text is centered
+                  style: GoogleFonts.ubuntu(
+                    textStyle: const TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                      color: Color.fromARGB(255, 79, 78, 78),
+                    ),
                   ),
                 ),
               ),
-            ),
-            const SizedBox(height: 20),
+              const SizedBox(height: 20),
 
-            // Search Field
-            CustomeHomeTextField(cityController: cityController),
-            const SizedBox(height: 20),
+              // Search Field
+              CustomeHomeTextField(cityController: cityController),
+              const SizedBox(height: 20),
 
-            // Search Button
-            SearchButton(cityController: cityController, title: 'Search'),
-          ],
+              // Search Button
+              SearchButton(cityController: cityController, title: 'Search'),
+            ],
+          ),
         ),
       ),
     );
