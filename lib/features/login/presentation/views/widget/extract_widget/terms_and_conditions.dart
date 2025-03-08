@@ -68,10 +68,7 @@ class _TermsAndConditionsWidgetState extends State<TermsAndConditionsWidget> {
                     color: AppColor.LightPrimaryColor,
                   )),
                   recognizer: TapGestureRecognizer()
-                    ..onTap = () {
-                      _showDialog(context, 'Privacy Policy',
-                          'Here is the privacy policy...');
-                    },
+                    
                 ),
               ],
             ),
@@ -90,7 +87,7 @@ class _TermsAndConditionsWidgetState extends State<TermsAndConditionsWidget> {
         return AlertDialog(
           title: Text(title,style: GoogleFonts.ubuntu()),
           content: SingleChildScrollView(
-            child: Text(content),
+            child: Text(content,style: GoogleFonts.ubuntu()),
           ),
           actions: <Widget>[
             TextButton(

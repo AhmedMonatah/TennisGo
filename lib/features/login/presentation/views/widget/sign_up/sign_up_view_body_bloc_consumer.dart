@@ -1,5 +1,6 @@
 import 'package:weather_app/core/helper_function/build_error_bar.dart';
 import 'package:weather_app/core/utiles/app_color.dart';
+import 'package:weather_app/core/utiles/strings.dart';
 import 'package:weather_app/core/widgets/loading_page_effects.dart';
 import 'package:weather_app/features/login/presentation/cubits/signup_cubits/signup_cubit.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +20,7 @@ class SignUpViewBodyBlocConsumer extends StatelessWidget {
           // Show a success snackbar
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
-              content: Text('Sign-up successful!'),
+              content: Text(AppStrings.SignupSuccess),
               backgroundColor: AppColor.LightPrimaryColor,
             ),
           );

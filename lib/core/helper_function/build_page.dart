@@ -26,7 +26,7 @@ List<Widget> buildPages(BuildContext context) {
               type: QuickAlertType.error,
               title: AppStrings.TitleProblemWeather,
               text: AppStrings.TextProblemWeather,
-              confirmBtnText: 'Retry',
+              confirmBtnText: AppStrings.Retry,
               confirmBtnColor: Colors.lightGreen,
               onConfirmBtnTap: () {
                 Navigator.pushReplacementNamed(context, SearchView.routeName);
