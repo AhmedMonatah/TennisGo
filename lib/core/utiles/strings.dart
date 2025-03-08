@@ -59,7 +59,33 @@ class AppStrings {
   static const String TemperatureTitle ='Temperature Over Last 7 Days';
   static const String HumidityTitle ='Humidity Levels';
   static const String WindSpeedTitle ='Wind Speed Over Last 7 Days';
+  static const String TitleProblemWeather ='Oops! Something went wrong';
+  static const String TextProblemWeather ='We couldn\'t fetch the weather data. Please try again later.';
+  static const String NoWeatherAvailable ='No weather data available';
+  static const String NoPredictionAvailable ='No prediction data available';
+  static const String NoPredictionStatisticsAvailable ='No statistics data available';
+  static const String Retry ='Retry';
 
+  //sign up screen
+  static const String signUp = 'Sign Up';
+  static const String SignupSuccess = 'Sign-up successful!';
+  static const String SignupImage = 'assets/svgs/sign_up.svg';
+  static const String SignupHintName = 'Full Name';
+  static const String SignupHintEmail = 'Email';
+  static const String SignupAcceptTerms = 'You must accept terms and conditions';
+  static const String SignupCreateAccount = 'Create Account';
+  static const String SignupMainTopImage = 'assets/images/main_top.png';
+  static const String SignupMainBottomImage = 'assets/images/login_bottom.png';
+
+  static const String signUpError = 'Sign Up Error';
+  static const String signUpErrorEmpty = 'Please fill all the fields';
+  static const String signUpErrorEmail = 'Please enter valid email';
+  static const String signUpErrorPhone = 'Please enter valid phone number';
+  static const String signUpErrorPassword = 'Please enter valid password';
+  static const String signUpErrorPasswordMatch = 'Password does not match';
+
+
+  
   // Profile screen
   static const String saveButton = 'Save';
   static const String userNameHintText = 'User Name';

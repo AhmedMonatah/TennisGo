@@ -1,5 +1,6 @@
 import 'package:flutter_svg/svg.dart';
 import 'package:weather_app/core/helper_function/build_error_bar.dart';
+import 'package:weather_app/core/utiles/strings.dart';
 import 'package:weather_app/core/widgets/custom_text_field.dart';
 import 'package:weather_app/core/widgets/custome_button.dart';
 import 'package:weather_app/core/widgets/password_field.dart';
@@ -36,7 +37,7 @@ class _SignupViewBodyState extends State<SignupViewBody> {
           child: Opacity(
             opacity: 0.5,
             child: Image.asset(
-              'assets/images/main_top.png',
+              AppStrings.SignupMainTopImage,
               height: 220,
               width: 195,
               fit: BoxFit.cover,
@@ -51,7 +52,7 @@ class _SignupViewBodyState extends State<SignupViewBody> {
           child: Opacity(
             opacity: 0.5,
             child: Image.asset(
-              'assets/images/login_bottom.png',
+              AppStrings.SignupMainBottomImage,
               height: 130,
               width: 180,
               fit: BoxFit.cover,
@@ -74,7 +75,7 @@ class _SignupViewBodyState extends State<SignupViewBody> {
                 children: [
                   // Signup Illustration
                   SvgPicture.asset(
-                    'assets/svgs/sign_up.svg',
+                    AppStrings.SignupImage,
                     height: 250,
                   ),
                   const SizedBox(height: 20),
@@ -84,7 +85,7 @@ class _SignupViewBodyState extends State<SignupViewBody> {
                     onSaved: (value) {
                       userName = value!;
                     },
-                    hintText: 'Full Name',
+                    hintText: AppStrings.SignupHintName,
                     textInputType: TextInputType.name,
                   ),
                   const SizedBox(height: 14),
@@ -94,7 +95,7 @@ class _SignupViewBodyState extends State<SignupViewBody> {
                     onSaved: (value) {
                       email = value!;
                     },
-                    hintText: 'Email',
+                    hintText: AppStrings.SignupHintEmail,
                     textInputType: TextInputType.emailAddress,
                   ),
                   const SizedBox(height: 14),
@@ -124,11 +125,11 @@ class _SignupViewBodyState extends State<SignupViewBody> {
                           context.read<SignupCubit>()
                               .createUserWithEmailAndPassword(email, password, userName);
                         } else {
-                          buildErrorBar(context, 'You must accept terms and conditions');
+                          buildErrorBar(context, AppStrings.SignupAcceptTerms);
                         }
                       }
                     },
-                    text: 'Create Account',
+                    text: AppStrings.SignupCreateAccount,
                   ),
                   const SizedBox(height: 20), // Reduced space
 
