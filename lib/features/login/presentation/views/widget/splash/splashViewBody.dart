@@ -1,7 +1,9 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
+import 'package:weather_app/core/services/shared_preferences_singleton.dart';
 import 'package:weather_app/features/login/presentation/views/widget/onboarding/onbord.dart';
+import 'package:weather_app/features/login/presentation/views/widget/sign_in/signin_view.dart';
 
 class SplashViewBody extends StatefulWidget {
   @override
@@ -38,11 +40,23 @@ class _SplashScreenState extends State<SplashViewBody>
 
     _controller.forward();
 
-    Timer(const Duration(seconds: 3), () {
+    _navigateToNextScreen();
+  }
+
+  void _navigateToNextScreen() async {
+    await Future.delayed(const Duration(seconds: 3));
+
+    bool seenOnboarding = Prefs.getBool("seenOnboarding");
+
+    if (seenOnboarding) {
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (context) => SigninView()),
+      );
+    } else {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(builder: (context) => Onboarding()),
       );
-    });
+    }
   }
 
   @override
@@ -54,24 +68,24 @@ class _SplashScreenState extends State<SplashViewBody>
   @override
   Widget build(BuildContext context) {
     return Center(
-        child: FadeTransition(
-          opacity: _fadeAnimation,
-          child: ScaleTransition(
-            scale: _scaleAnimation,
-            child: RotationTransition(
-              turns: _rotationAnimation,
-              child: Shimmer.fromColors(
-                baseColor: Colors.lightGreen,
-                highlightColor: Colors.white,
-                child: Image.asset(
-                  'assets/images/Logo.png',
-                  height: 150,
-                  width: 150,
-                ),
+      child: FadeTransition(
+        opacity: _fadeAnimation,
+        child: ScaleTransition(
+          scale: _scaleAnimation,
+          child: RotationTransition(
+            turns: _rotationAnimation,
+            child: Shimmer.fromColors(
+              baseColor: Colors.lightGreen,
+              highlightColor: Colors.white,
+              child: Image.asset(
+                'assets/images/Logo.png',
+                height: 150,
+                width: 150,
               ),
             ),
           ),
         ),
-      );
+      ),
+    );
   }
 }

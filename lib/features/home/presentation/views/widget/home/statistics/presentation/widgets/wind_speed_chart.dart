@@ -31,7 +31,7 @@ class WindSpeedChart extends StatelessWidget {
           leftTitles: AxisTitles(
             sideTitles: SideTitles(
               showTitles: true,
-              interval:7, // ✅ Less Y-axis numbers (adjust as needed)
+              interval:7, 
               reservedSize: 40,
               getTitlesWidget: (value, meta) {
                 return Padding(
@@ -49,7 +49,7 @@ class WindSpeedChart extends StatelessWidget {
             sideTitles: SideTitles(showTitles: false), 
           ),
         ),
-        borderData: FlBorderData(show: true),
+        borderData: FlBorderData(show: true,border: Border.all(color: Colors.black,width: 1,style: BorderStyle.solid)),
         lineBarsData: [
           LineChartBarData(
             spots: weather.forecast.asMap().entries.map((entry) {
