@@ -4,7 +4,7 @@ import 'package:weather_app/features/home/presentation/views/widget/home/search_
 import 'package:weather_app/features/home/presentation/views/widget/home/weather_view/weather_view.dart';
 import 'package:weather_app/features/login/presentation/views/widget/sign_in/signin_view.dart';
 import 'package:weather_app/features/login/presentation/views/widget/sign_up/signup_view.dart';
-import 'package:weather_app/features/login/presentation/views/widget/splash/splshScreen.dart';
+import 'package:weather_app/features/login/presentation/views/widget/splash/splashScreen.dart';
 Route<dynamic> onGenerateRoute(RouteSettings settings){
 switch(settings.name){
 case SplashScreen.routeName:

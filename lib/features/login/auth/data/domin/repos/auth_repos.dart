@@ -5,6 +5,8 @@ import 'package:weather_app/features/login/auth/data/domin/entites/user_entity.d
 abstract class AuthRepo{
   Future<Either<Failure,UserEntity>> createUserWithEmailAndPassword(String email, String password,String name);
   Future<Either<Failure,UserEntity>> signInWithEmailAndPassword(String email, String password);
+  Future<Either<Failure, UserEntity>> signInWithGoogle();
+  Future<Either<Failure,UserEntity>> signInWithFacebook();
 
   Future addUserData({required UserEntity user});
   Future saveUserData({required UserEntity user});

@@ -102,4 +102,42 @@ class AuthRepoImplementation extends AuthRepo {
     var jsonData = jsonEncode(UserModel.fromEntity(user).toMap());
     await Prefs.setString(kUserData, jsonData);
   }
+@override
+  Future<Either<Failure, UserEntity>> signInWithGoogle() async {
+    try {
+      var user = await firebaseServices.signInWithGoogle();
+      UserEntity userEntity = UserModel.fromFirestore(user);
+
+      // Save the user data to Firestore
+      await setUserData(userEntity: userEntity);
+
+      return Right(userEntity);
+    } on Exception catch (_) {
+      return Left(ServerFailure('An error occurred. Please try again.'));
+    } catch (e) {
+      return Left(ServerFailure('An error occurred. Please try again.'));
+    }
+  }
+  @override
+  Future<void> setUserData({required UserEntity userEntity}) async {
+    await dataBaseServices.setData(
+      path: BackendEndpoint.addUserData,
+      data: userEntity.toMap(),
+    );
+  }
+       @override
+     Future<Either<Failure, UserEntity>> signInWithFacebook() async {
+
+       try{
+         var user= await firebaseServices.signInWithFacebook();
+         return  Right(UserModel.fromFirestore(user));
+       }on Exception catch (e) {
+
+         return Left(ServerFailure( 'حدث خطأ ما. الرجاء المحاولة مرة اخرى.'),);
+       }catch (e) {
+
+         return Left(ServerFailure('حدث خطأ ما. الرجاء المحاولة مرة اخرى.',),);
+       }
+     }
+     
 }

@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:weather_app/core/services/data_service.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -48,6 +49,20 @@ class FireStoreService implements DataBaseServices{
     var data = await firestore.collection(path).doc(docuementId).get();
     return data.exists;
   }
+   @override
+  Future<void> setData({
+    required String path,
+    required Map<String, dynamic> data,
+  }) async {
+    try {
+      // Use `set` with the user's UID as the document ID
+      await firestore.collection(path).doc(data['uId']).set(data);
+    } catch (e) {
+      debugPrint('Error saving data to Firestore: $e');
+      throw Exception('Failed to save data');
+    }
+  }
+
 }
 
 

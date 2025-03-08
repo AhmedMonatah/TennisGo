@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:weather_app/core/utiles/app_color.dart';
 import 'package:weather_app/core/utiles/app_text_styles.dart';
 import 'package:weather_app/core/utiles/terms_and_conditional.dart';
@@ -42,15 +43,15 @@ class _TermsAndConditionsWidgetState extends State<TermsAndConditionsWidget> {
               children: [
                 TextSpan(
                   text: 'By creating an account, you agree to the ',
-                  style: TextStyles.semiBold13.copyWith(
+                  style:GoogleFonts.ubuntu(textStyle:TextStyles.semiBold13.copyWith(
                     color:  AppColor.CondtionInSign,
-                  ),
+                  )) 
                 ),
                 TextSpan(
                   text: 'Terms and Conditions',
-                  style: TextStyles.semiBold13.copyWith(
-                    color: AppColor.gradient2,
-                  ),
+                  style:GoogleFonts.ubuntu(textStyle: TextStyles.semiBold13.copyWith(
+                    color: AppColor.LightPrimaryColor,
+                  )),
                   recognizer: TapGestureRecognizer()
                     ..onTap = () {
                       _showDialog(context, 'Terms and Conditions',
@@ -63,9 +64,9 @@ class _TermsAndConditionsWidgetState extends State<TermsAndConditionsWidget> {
                 ),
                 TextSpan(
                   text: 'and Privacy Policy',
-                  style: TextStyles.semiBold13.copyWith(
-                    color: AppColor.gradient2,
-                  ),
+                  style:GoogleFonts.ubuntu(textStyle: TextStyles.semiBold13.copyWith(
+                    color: AppColor.LightPrimaryColor,
+                  )),
                   recognizer: TapGestureRecognizer()
                     ..onTap = () {
                       _showDialog(context, 'Privacy Policy',
@@ -87,13 +88,13 @@ class _TermsAndConditionsWidgetState extends State<TermsAndConditionsWidget> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text(title),
+          title: Text(title,style: GoogleFonts.ubuntu()),
           content: SingleChildScrollView(
             child: Text(content),
           ),
           actions: <Widget>[
             TextButton(
-              child: const Text('Close'),
+              child:  Text('Close',style: GoogleFonts.ubuntu(textStyle: TextStyle(color: AppColor.LightPrimaryColor))),
               onPressed: () {
                 Navigator.of(context).pop();
               },
