@@ -31,7 +31,7 @@ class WindSpeedChart extends StatelessWidget {
           leftTitles: AxisTitles(
             sideTitles: SideTitles(
               showTitles: true,
-              interval: 5, // ✅ Less Y-axis numbers (adjust as needed)
+              interval:7, // ✅ Less Y-axis numbers (adjust as needed)
               reservedSize: 40,
               getTitlesWidget: (value, meta) {
                 return Padding(
