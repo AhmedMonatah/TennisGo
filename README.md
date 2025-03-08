@@ -51,7 +51,7 @@ http://10.0.2.2:5001/predict
 
 ## 📸 Screenshots
 
-<table align="center">
+<table align="start">
   <tr>
     <th>Splash Screen</th>
     <th>Onboarding 1</th>
