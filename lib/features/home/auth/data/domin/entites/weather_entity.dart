@@ -23,13 +23,15 @@ class WeatherDay {
   final num humidity;
   final num cloudCover;
   final int dailyWillItRain; // New field
+  final double windSpeed;   // Add this line
 
-  WeatherDay({
+  WeatherDay( {
     required this.date,
     required this.temperature,
     required this.condition,
     required this.humidity,  
     required this.cloudCover, 
-    required this.dailyWillItRain, // Initialize the new field
+    required this.dailyWillItRain,
+    required this.windSpeed, // Initialize the new field
   });
 }

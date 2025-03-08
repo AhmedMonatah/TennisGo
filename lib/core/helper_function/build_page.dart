@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:weather_app/core/widgets/loading_page_effects.dart';
 import 'package:weather_app/features/home/presentation/manger/cubits/weather_cubit/weather_cubit.dart';
 import 'package:weather_app/features/home/presentation/manger/cubits/weather_cubit/weather_state.dart';
 import 'package:weather_app/features/home/presentation/views/widget/home/fav_view/favorite_view_body.dart';
-import 'package:weather_app/features/home/presentation/views/widget/home/prediction_view/Prediction_view.dart';
+import 'package:weather_app/features/home/presentation/views/widget/home/prediction_view/prediction_view.dart';
 import 'package:weather_app/features/home/presentation/views/widget/home/search_view/search_view.dart';
+import 'package:weather_app/features/home/presentation/views/widget/home/statistics/presentation/views/statistics_view.dart';
 import 'package:weather_app/features/home/presentation/views/widget/home/weather_view/weather_view_body.dart';
-
 List<Widget> buildPages(BuildContext context) {
   return [
     BlocBuilder<WeatherCubit, WeatherState>(
       builder: (context, state) {
         if (state is WeatherLoading) {
-          return const Center(child: CircularProgressIndicator());
+          return const Center(child: RotatingLoadingWidget());
         } else if (state is WeatherSuccess) {
           return WeatherViewBody(weather: state.weather);
         } else if (state is WeatherError) {
@@ -40,7 +41,7 @@ List<Widget> buildPages(BuildContext context) {
                 const SizedBox(height: 20),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
+                    backgroundColor: Colors.lightGreen,
                     padding: const EdgeInsets.symmetric(
                         horizontal: 25, vertical: 15),
                     shape: RoundedRectangleBorder(
@@ -69,7 +70,22 @@ List<Widget> buildPages(BuildContext context) {
       },
     ),
     const FavoriteViewBody(),
-    // Adding Prediction Page with weather data
+    // Adding the Statistics View
+    BlocBuilder<WeatherCubit, WeatherState>(
+      builder: (context, state) {
+        if (state is WeatherSuccess) {
+          return StatisticsView(weather: state.weather);
+        } else {
+          return const Center(
+            child: Text(
+              'No statistics data available',
+              style: TextStyle(color: Colors.white),
+            ),
+          );
+        }
+      },
+    ),
+    // Moving Prediction View to the last position
     BlocBuilder<WeatherCubit, WeatherState>(
       builder: (context, state) {
         if (state is WeatherSuccess) {

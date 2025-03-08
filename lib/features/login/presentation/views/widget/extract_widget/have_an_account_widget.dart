@@ -1,3 +1,4 @@
+import 'package:google_fonts/google_fonts.dart';
 import 'package:weather_app/core/utiles/app_color.dart';
 import 'package:weather_app/core/utiles/app_text_styles.dart';
 import 'package:flutter/gestures.dart';
@@ -14,9 +15,9 @@ class HaveAnAccountWidget extends StatelessWidget {
         children: [
           TextSpan(
             text: 'Do you have an account? ',
-            style: TextStyles.semiBold16.copyWith(
+            style:GoogleFonts.ubuntu(textStyle:TextStyles.semiBold16.copyWith(
               color: AppColor.CondtionInSign,
-            ),
+            ), ) 
           ),
           TextSpan(
             text: ' ',
@@ -31,7 +32,7 @@ class HaveAnAccountWidget extends StatelessWidget {
               },
             text: 'Sign In',
             style:
-                TextStyles.semiBold16.copyWith(color: AppColor.gradient2),
+                TextStyles.semiBold16.copyWith(color: AppColor.LightPrimaryColor),
           ),
         ],
       ),

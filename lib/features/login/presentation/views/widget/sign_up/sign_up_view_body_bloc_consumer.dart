@@ -1,9 +1,9 @@
 import 'package:weather_app/core/helper_function/build_error_bar.dart';
 import 'package:weather_app/core/utiles/app_color.dart';
+import 'package:weather_app/core/widgets/loading_page_effects.dart';
 import 'package:weather_app/features/login/presentation/cubits/signup_cubits/signup_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:weather_app/features/login/presentation/views/widget/sign_up/sign_up_home.dart';
 
 class SignUpViewBodyBlocConsumer extends StatelessWidget {
@@ -18,9 +18,9 @@ class SignUpViewBodyBlocConsumer extends StatelessWidget {
         if (state is SignupSuccess) {
           // Show a success snackbar
           ScaffoldMessenger.of(context).showSnackBar(
-           const SnackBar(
+            const SnackBar(
               content: Text('Sign-up successful!'),
-              backgroundColor: AppColor.gradient2,
+              backgroundColor: AppColor.LightPrimaryColor,
             ),
           );
 
@@ -35,9 +35,11 @@ class SignUpViewBodyBlocConsumer extends StatelessWidget {
         }
       },
       builder: (context, state) {
-        return ModalProgressHUD(
-          inAsyncCall: state is SignupLoading ? true : false,
-          child: const SignupViewBody(),
+        return Stack(
+          children: [
+            const SignupViewBody(), // Main UI
+            if (state is SignupLoading) const RotatingLoadingWidget(), // Show loader when loading
+          ],
         );
       },
     );

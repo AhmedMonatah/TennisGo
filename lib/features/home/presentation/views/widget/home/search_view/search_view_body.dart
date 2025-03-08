@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:weather_app/core/helper_function/get_current_location_and_city.dart';
-import 'package:weather_app/core/helper_function/get_user.dart';
+import 'package:weather_app/core/utiles/strings.dart';
 import 'package:weather_app/features/home/presentation/views/widget/extract_widget/custome_home_text_field.dart';
 import 'package:weather_app/features/home/presentation/views/widget/extract_widget/search_button.dart';
 
@@ -17,55 +18,51 @@ class _SearchViewBodyState extends State<SearchViewBody> {
   @override
   void initState() {
     super.initState();
-    // Use the helper function
     getCurrentLocationAndCity(cityController: cityController, context: context);
   }
 
   @override
   Widget build(BuildContext context) {
-    // Use MediaQuery to get screen height
     final size = MediaQuery.of(context).size;
     final screenHeight = size.height;
 
-    return Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: ListView(
-        children: [
-          const Text(
-            'Hello',
-            style: TextStyle(
-              fontSize: 29,
-              fontWeight: FontWeight.bold,
-              color: Colors.blueAccent,
+    return SafeArea(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 29),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            // Training Image
+            Image.asset(
+              AppStrings.SearchViewImage,
+              height: screenHeight * 0.35, // Responsive height
             ),
-          ),
-          const SizedBox(height: 8),
-          Text(
-            getUser().name,
-            style: const TextStyle(
-              fontSize: 30,
-              letterSpacing: 2,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
-            ),
-          ),
-          const SizedBox(height: 40),
+            const SizedBox(height: 20),
 
-          // Use SizedBox to control the vertical spacing and center content
-          SizedBox(
-            height: screenHeight * 0.4,  // Adjust height based on screen size
-            child: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  CustomeHomeTextField(cityController: cityController),
-                  const SizedBox(height: 35),
-                  SearchButton(cityController: cityController, title: 'Search'),
-                ],
+            // Centered "Training Day" Text
+            Center(
+              child: Text(
+                AppStrings.SearchViewSubtitle,
+                textAlign: TextAlign.center, // Ensures text is centered
+                style: GoogleFonts.ubuntu(
+                  textStyle: const TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    color: Color.fromARGB(255, 79, 78, 78),
+                  ),
+                ),
               ),
             ),
-          ),
-        ],
+            const SizedBox(height: 20),
+
+            // Search Field
+            CustomeHomeTextField(cityController: cityController),
+            const SizedBox(height: 20),
+
+            // Search Button
+            SearchButton(cityController: cityController, title: 'Search'),
+          ],
+        ),
       ),
     );
   }

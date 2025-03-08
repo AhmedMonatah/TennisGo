@@ -10,7 +10,7 @@ import 'package:weather_app/features/home/auth/data/domin/usecase/get_weather_us
 import 'package:weather_app/features/home/auth/data/repo_imp/weather_repository_impl.dart';
 import 'package:weather_app/features/home/presentation/manger/cubits/fav_cubit/fav_cubit.dart';
 import 'package:weather_app/features/home/presentation/manger/cubits/weather_cubit/weather_cubit.dart';
-import 'package:weather_app/features/login/presentation/views/widget/splash/splshScreen.dart';
+import 'package:weather_app/features/login/presentation/views/widget/splash/splashScreen.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -44,9 +44,10 @@ class TennisWeather extends StatelessWidget {
         ),
       ],
       child: MaterialApp(
-        theme: ThemeData.dark().copyWith(
-          scaffoldBackgroundColor: AppColor.backgroundColor,
-        ),
+        theme: ThemeData(
+        primarySwatch: Colors.lightGreen,
+        primaryColor: Colors.lightGreen, // Change to light green
+      ),
         debugShowCheckedModeBanner: false,
         onGenerateRoute: onGenerateRoute,
         initialRoute: SplashScreen.routeName,

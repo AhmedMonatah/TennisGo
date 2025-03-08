@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:weather_app/core/utiles/app_color.dart';
 import 'package:weather_app/features/home/presentation/manger/cubits/fav_cubit/fav_cubit.dart';
 import 'package:weather_app/features/home/presentation/views/widget/home/search_view/search_view.dart';
 
@@ -47,12 +46,11 @@ class _AppBarHomePageState extends State<AppBarHomePage> {
       },
       child: Container(
         height: MediaQuery.of(context).size.height * 0.08, // Adjust height as needed
-        color: AppColor.PrimaryHomeColor,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             IconButton(
-              icon: const Icon(Icons.arrow_back, color: Colors.white),
+              icon: const Icon(Icons.arrow_back, color: Colors.black),
               onPressed: () {
                 Navigator.pushReplacementNamed(
                   context,

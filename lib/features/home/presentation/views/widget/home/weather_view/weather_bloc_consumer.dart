@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:weather_app/core/widgets/loading_page_effects.dart';
 import 'package:weather_app/features/home/presentation/manger/cubits/weather_cubit/weather_cubit.dart';
 import 'package:weather_app/features/home/presentation/manger/cubits/weather_cubit/weather_state.dart';
 import 'package:weather_app/features/home/presentation/views/widget/extract_widget/bottom_navigation_bar.dart';
@@ -15,12 +16,12 @@ class WeatherBlocConsumer extends StatelessWidget {
     final currentCity = weatherCubit.currentCity;
 
     return Scaffold(
-      backgroundColor: const Color(0xFF0A1F44), // dark blue background
+      backgroundColor: Color.fromRGBO(156,231,187, 1), // dark blue background
       bottomNavigationBar: const CustomBottomNavigationBar(),
       body: BlocBuilder<WeatherCubit, WeatherState>(
         builder: (context, state) {
           if (state is WeatherLoading) {
-            return const Center(child: CircularProgressIndicator());
+            return const Center(child: RotatingLoadingWidget()); // Replace with custom widget
           } else if (state is WeatherSuccess) {
             return WeatherViewBody(weather: state.weather);
           } else if (state is WeatherError) {

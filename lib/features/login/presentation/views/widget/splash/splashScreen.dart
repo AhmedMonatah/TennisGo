@@ -6,7 +6,8 @@ class SplashScreen extends StatelessWidget {
   static const routeName="splash";
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
+      backgroundColor: Colors.white30,
       body: SafeArea(child: SplashViewBody()),
     );
   }

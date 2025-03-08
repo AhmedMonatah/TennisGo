@@ -1,21 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:quickalert/quickalert.dart';
+import 'package:weather_app/core/utiles/app_color.dart';
 
-void showPredictionDialog(BuildContext context, String message) {
-  showDialog(
+void showQuickAlert(BuildContext context, String message) {
+  QuickAlert.show(
     context: context,
-    builder: (BuildContext context) {
-      return AlertDialog(
-        title: const Text('🌟 Training Prediction 🌟'),
-        content: Text(message),
-        actions: [
-          TextButton(
-            onPressed: () {
-              Navigator.of(context).pop(); // Close the dialog
-            },
-            child: const Text('👍 OK'),
-          ),
-        ],
-      );
-    },
+    type: QuickAlertType.error,
+    title: '🌟 Training Prediction 🌟',
+    text: message,
+    confirmBtnText: 'OK',
+    confirmBtnColor: Colors.red,
   );
 }

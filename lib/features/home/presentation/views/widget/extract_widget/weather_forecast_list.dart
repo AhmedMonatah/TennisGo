@@ -15,10 +15,8 @@ class WeatherForecastList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
-
     return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.15, // 12% of screen height
+      height: 100,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: weather.forecast.length,
@@ -29,35 +27,29 @@ class WeatherForecastList extends StatelessWidget {
           return GestureDetector(
             onTap: () => onDaySelected(index),
             child: AnimatedContainer(
-              duration: const Duration(milliseconds: 300),
-              width: screenWidth * 0.18, // 18% of screen width
-              margin: const EdgeInsets.symmetric(horizontal: 8),
-              padding: const EdgeInsets.all(8),
+              duration: Duration(milliseconds: 300),
+              margin: EdgeInsets.symmetric(horizontal: 8),
+              padding: EdgeInsets.all(10),
               decoration: BoxDecoration(
-                color: isSelected
-                    ? Colors.blueAccent.withOpacity(0.8)
-                    : Colors.white.withOpacity(0.1),
+                color: isSelected ? Colors.tealAccent : Colors.grey.withOpacity(0.5),
                 borderRadius: BorderRadius.circular(12),
-                border: isSelected
-                    ? Border.all(color: Colors.blueAccent, width: 2)
-                    : null,
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
                     day.date.split('-').last,
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 18,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  const SizedBox(height: 8),
+                  SizedBox(height: 5),
                   Text(
                     '${day.temperature}°C',
-                    style: const TextStyle(
-                      color: Colors.white,
+                    style: TextStyle(
+                      color: Colors.black,
                       fontSize: 16,
                     ),
                   ),

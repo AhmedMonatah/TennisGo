@@ -1,6 +1,5 @@
 import 'package:weather_app/core/services/get_it_services.dart';
-import 'package:weather_app/core/widgets/custome_app_bar.dart';
-
+import 'package:weather_app/core/utiles/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weather_app/features/login/auth/data/domin/repos/auth_repos.dart';
@@ -9,7 +8,7 @@ import 'package:weather_app/features/login/presentation/views/widget/sign_up/sig
 class SignupView extends StatelessWidget {
   const SignupView({super.key});
 
-  static const routeName = 'signup';
+  static const routeName = Ksignup;
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -17,7 +16,6 @@ class SignupView extends StatelessWidget {
         getit<AuthRepo>(),
       ),
       child: Scaffold(
-        appBar: BuildAppBar(context, title: 'New Account'),
         body: const SignUpViewBodyBlocConsumer(),
       ),
     );
