@@ -45,9 +45,16 @@ class TennisWeather extends StatelessWidget {
       ],
       child: MaterialApp(
         theme: ThemeData(
-        primarySwatch: Colors.lightGreen,
-        primaryColor: Colors.lightGreen, // Change to light green
-      ),
+          primarySwatch:Colors.lightGreen,
+          primaryColor: AppColor.LightPrimaryColor,
+          textSelectionTheme: TextSelectionThemeData(
+            cursorColor: AppColor.LightPrimaryColor, // Cursor color when typing
+            selectionColor:
+                AppColor.LightPrimaryColor.withOpacity(0.5), // Selected text highlight
+            selectionHandleColor:
+                AppColor.LightPrimaryColor, // Handle color when selecting text
+          ),
+        ),
         debugShowCheckedModeBanner: false,
         onGenerateRoute: onGenerateRoute,
         initialRoute: SplashScreen.routeName,

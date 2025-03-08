@@ -3,6 +3,8 @@ class AppStrings {
   static const String skip = "Skip";
   static const String Continue = "Continue";
   static const String Next = "Next";
+  static const String Ksplash = "splash";
+
   // OnBoarding Strings
   static const String FirstImageInOnBoarding = "assets/images/welcome.png";
   static const String FirstTitleInOnBoarding = "Play Smart, Play Safe!";

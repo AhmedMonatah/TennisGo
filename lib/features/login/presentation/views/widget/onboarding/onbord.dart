@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:weather_app/core/services/shared_preferences_singleton.dart';
 import 'package:weather_app/core/utiles/app_color.dart';
 import 'package:weather_app/core/utiles/strings.dart';
 import 'package:weather_app/features/login/presentation/views/widget/onboarding/models.dart';
@@ -121,9 +122,10 @@ class _OnboardingState extends State<Onboarding> {
       ),
     );
   }
+void goToHomeScreen() {
+  Prefs.setBool("seenOnboarding", true); // No await needed
+  Navigator.pushReplacementNamed(context, SigninView.routeName);
+}
 
-  void goToHomeScreen() {
-            Navigator.pushNamed(context, SigninView.routeName);
 
-  }
 }
